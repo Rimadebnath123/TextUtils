@@ -38,7 +38,8 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <div class="container">
-    <form action='/analyze' method='get'>
+    <form action='/analyze' method='post'>
+        {% csrf_token%}
  <div class="form-group">
     <label for="exampleFormControlTextarea">Enter your text here and let Text Utils do the magic</label>
     <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
@@ -55,10 +56,12 @@
   <input class="form-check-input" name="newlineremover" type="checkbox" id="flexSwitchCheckDefault2">
   <label class="form-check-label" for="flexSwitchCheckDefault">New Line Remover</label>
 </div>
+
 <div class="form-check form-switch">
-  <input class="form-check-input" name="extraspaceremover" type="checkbox" id="flexSwitchCheckDefaul3t">
+  <input class="form-check-input" name="extraspaceremover" type="checkbox" id="flexSwitchCheckDefault3">
   <label class="form-check-label" for="flexSwitchCheckDefault">Extra Spaces Remover</label>
 </div>
+
 <div class="form-check form-switch">
   <input class="form-check-input" name="charCounter" type="checkbox" id="flexSwitchCheckDefault4">
   <label class="form-check-label" for="flexSwitchCheckDefault">Character counter</label>
